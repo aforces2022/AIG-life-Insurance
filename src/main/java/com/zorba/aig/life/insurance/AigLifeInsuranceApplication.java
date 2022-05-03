@@ -23,7 +23,53 @@ public class AigLifeInsuranceApplication {
 
 		EmployeeRepository repository = context.getBean(EmployeeRepository.class);
 
-		List<Employee> employeeList =repository.findAll();
+		//select * from emp;
+		List<Employee> employees = repository.findAll();
+
+		System.out.println(employees);
+
+		Employee employee = repository.findById(1).get();
+		employee.setName("MS DHONI");
+
+		repository.save(employee);
+
+
+		System.out.println("updated data");
+		System.out.println(repository.findAll());
+
+		System.out.println("number of record in the database");
+		//select count(*) from emp;
+
+		long records = repository.count();
+
+		System.out.println(records);
+
+		//insert into emp (id,name,address,sal) values(3,'rohit','bom',67);
+		Employee employee1 = new Employee();
+		employee1.setId(3);
+		employee1.setName("rohit");
+		employee1.setAddress("mumbai");
+		employee1.setPhone("3424234");
+		employee1.setSal(8746334);
+
+		repository.save(employee1);
+
+		System.out.println(repository.findAll());
+
+		repository.deleteById(1);
+
+		System.out.println(repository.findAll());
+
+
+
+
+
+
+
+
+
+
+		/*List<Employee> employeeList =repository.findAll();
 
 		System.out.println("select * from emp");
 		System.out.println(employeeList);
@@ -50,7 +96,7 @@ public class AigLifeInsuranceApplication {
 		System.err.println(repository.findAll());
 
 		System.out.println(repository.findEmployeeByName("DHONI"));
-		System.out.println(repository.findEmployeeByNameStartingWith("D"));
+		System.out.println(repository.findEmployeeByNameStartingWith("D"));*/
 		/*EmployeeDemoRepo employeeDemoRepo = new EmployeeDemoRepo();
 		Optional<Employee> e = employeeDemoRepo.findById(1);
 		if(e.isPresent()){

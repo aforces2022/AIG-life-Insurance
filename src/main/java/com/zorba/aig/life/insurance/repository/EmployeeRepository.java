@@ -11,7 +11,7 @@ import java.util.List;
 public interface EmployeeRepository extends JpaRepository<Employee,Integer> {
 
 
-    List<Employee> findEmployeeByName(String name);
+   /* List<Employee> findEmployeeByName(String name);
 
-    List<Employee> findEmployeeByNameStartingWith(String name);
+    List<Employee> findEmployeeByNameStartingWith(String name);*/
 }
