@@ -1,9 +1,9 @@
 package com.zorba.aig.life.insurance;
 
+import com.zorba.aig.life.insurance.controller.EmployeeController;
 import com.zorba.aig.life.insurance.entity.Employee;
 import com.zorba.aig.life.insurance.repository.EmployeeRepository;
-import com.zorba.aig.life.insurance.util.A;
-import com.zorba.aig.life.insurance.util.EmployeeDemoRepo;
+import com.zorba.aig.life.insurance.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -21,7 +21,26 @@ public class AigLifeInsuranceApplication {
 		//creating ioc container
 		ConfigurableApplicationContext context=SpringApplication.run(AigLifeInsuranceApplication.class, args);
 
-		EmployeeRepository repository = context.getBean(EmployeeRepository.class);
+		EmployeeController controller = context.getBean(EmployeeController.class);
+		System.out.println(controller.allEmp());
+
+		/*AdvancedCalculator advancedCalculator = context.getBean(AdvancedCalculator.class);
+		AdvancedCalculator advancedCalculator1 = context.getBean(AdvancedCalculator.class);
+
+		System.out.println(advancedCalculator.hashCode());
+		System.out.println(advancedCalculator1.hashCode());
+
+		System.out.println(advancedCalculator.qubesum(10,12));
+
+		ScintificCalculator calculator = context.getBean(ScintificCalculator.class);
+		System.out.println(calculator.squareSum(10,6));
+
+		BinaryCalculator calculator1 = context.getBean(BinaryCalculator.class);
+		calculator1.printValue(98,43);
+*/
+
+
+		/*EmployeeRepository repository = context.getBean(EmployeeRepository.class);
 
 		//select * from emp;
 		List<Employee> employees = repository.findAll();
@@ -58,7 +77,7 @@ public class AigLifeInsuranceApplication {
 
 		repository.deleteById(1);
 
-		System.out.println(repository.findAll());
+		System.out.println(repository.findAll());*/
 
 
 
