@@ -2,7 +2,9 @@ package com.zorba.aig.life.insurance;
 
 import com.zorba.aig.life.insurance.controller.EmployeeController;
 import com.zorba.aig.life.insurance.entity.Employee;
+import com.zorba.aig.life.insurance.repository.EmpRep;
 import com.zorba.aig.life.insurance.repository.EmployeeRepository;
+import com.zorba.aig.life.insurance.service.ProfTestUtil;
 import com.zorba.aig.life.insurance.util.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -122,6 +124,10 @@ public class AigLifeInsuranceApplication {
 			Employee e1 = e.get();
 			System.out.println(e1.getName());
 		}*/
+
+		ProfTestUtil profTestUtil = context.getBean(ProfTestUtil.class);
+		profTestUtil.print();
+
 
 	}
 
